@@ -1,80 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &968674220580521246
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9163508456450892991}
-  - component: {fileID: 980878931488474024}
-  - component: {fileID: 5950617812847837038}
-  m_Layer: 5
-  m_Name: HideImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &9163508456450892991
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968674220580521246}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2525091457519387670}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &980878931488474024
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968674220580521246}
-  m_CullTransparentMesh: 1
---- !u!114 &5950617812847837038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968674220580521246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.8235295, g: 0.9803922, b: 0.38431376, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3723626323961750045
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,13 +36,12 @@ RectTransform:
   m_Children:
   - {fileID: 8559005538969055489}
   - {fileID: 7378186773269241120}
-  - {fileID: 9163508456450892991}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &214698440018071839
 CanvasRenderer:
@@ -275,19 +199,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   cardImage: {fileID: 5109700784848281384}
-  hideImage: {fileID: 968674220580521246}
+  buttonText: {fileID: 3947614850446341990}
   photos:
-  - {fileID: 21300000, guid: 0fd54c5cc9dd03a46b821b9393c7f8ce, type: 3}
   - {fileID: 21300000, guid: f17d786d98692c94c815e09cb6e9734c, type: 3}
   - {fileID: 21300000, guid: 2766c808112307a49a5fc601da6cf173, type: 3}
-  - {fileID: 21300000, guid: 611be0acfb616d64ebcbf9d3354418ca, type: 3}
   - {fileID: 21300000, guid: 14f4d86b2d1d20148808767c3ffe9ee9, type: 3}
+  - {fileID: 21300000, guid: 3c90f000917baaf47bd29a792ab490a4, type: 3}
+  - {fileID: 21300000, guid: 215883b03f5c01b47889f604b0f23665, type: 3}
+  - {fileID: 21300000, guid: 0fd54c5cc9dd03a46b821b9393c7f8ce, type: 3}
+  - {fileID: 21300000, guid: 611be0acfb616d64ebcbf9d3354418ca, type: 3}
   - {fileID: 21300000, guid: 448f52cf5bcdd134e8131fdd1c5eed3c, type: 3}
   - {fileID: 21300000, guid: 973d6636a1e61de4ba28177ce8ea8237, type: 3}
-  - {fileID: 21300000, guid: 3c90f000917baaf47bd29a792ab490a4, type: 3}
   - {fileID: 21300000, guid: 550003b325c46f54987fb699b6ab4165, type: 3}
-  - {fileID: 21300000, guid: 215883b03f5c01b47889f604b0f23665, type: 3}
-  btn: {fileID: 366670358744548971}
+  - {fileID: 21300000, guid: 39487466fc7c42249bd00b9727091d38, type: 3}
+  - {fileID: 21300000, guid: d14abae613db243408a3f59bfbf0dbf1, type: 3}
+  - {fileID: 21300000, guid: 31735b22e62f56c439c3501001b134e8, type: 3}
+  - {fileID: 21300000, guid: b5bf69c0451b15046baf06e5e29558c6, type: 3}
 --- !u!1 &3947614850446341990
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -9,7 +7,7 @@ public class AudioManager : MonoBehaviour
     [Header("#BGM")]
     public AudioClip[] bgmClip;
     public float bgmVolume;
-    AudioSource bgmPlayer;
+    AudioSource[] bgmPlayers;
 
     [Header("#SFX")]
     public AudioClip[] sfxClips;
@@ -30,7 +28,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); // 중복 방지
+            Destroy(gameObject); //중복 방지
         }
     }
 
@@ -39,10 +37,18 @@ public class AudioManager : MonoBehaviour
         //배경음 플레이어 초기화
         GameObject bgmObject = new GameObject("BgmPlayer");
         bgmObject.transform.parent = transform;
-        bgmPlayer = bgmObject.AddComponent<AudioSource>();
-        bgmPlayer.playOnAwake = false;
-        bgmPlayer.loop = true;
-        bgmPlayer.volume = bgmVolume;
+        bgmPlayers = new AudioSource[2];
+
+        for (int i = 0; i < 2; i++)
+        {
+            bgmPlayers[i] = bgmObject.AddComponent<AudioSource>();
+            bgmPlayers[i].playOnAwake = false;
+            bgmPlayers[i].loop = true;
+            bgmPlayers[i].volume = bgmVolume;
+        }
+
+        bgmPlayers[0].clip = bgmClip[(int)Bgm.Normal];
+        bgmPlayers[1].clip = bgmClip[(int)Bgm.Warning];
 
         //효과음 플레이어 초기화
         GameObject sfxObject = new GameObject("SfxPlayer");
@@ -57,23 +63,20 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void ControlBgm(bool isPlay)
+    //BGM 관리(BMG 선택, BGM 시작 & 중지)
+    public void ControlBgm(Bgm bgm, bool isPlay)
     {
         if (isPlay)
         {
-            bgmPlayer.Play();
+            bgmPlayers[(int)bgm].Play();
         }
         else
         {
-            bgmPlayer.Stop();
+            bgmPlayers[(int)bgm].Stop();
         }
     }
 
-    public void ChangeBgm(Bgm bgm)
-    {
-        bgmPlayer.clip = bgmClip[(int)bgm];
-    }
-
+    //효과음 틀기
     public void PlaySfx(Sfx sfx)
     {
         for (int i = 0; i < channels; i++)
