@@ -55,6 +55,7 @@ public class Card : MonoBehaviour
         }
     }
 
+    //히든 스테이지 카드 뒤집기(애니메이션, 4개 초과 카드 뒤집기 방지, 효과음)
     public void HiddenFlipCard()
     {
         if (!GameManager.instance.isPlay)
@@ -87,11 +88,11 @@ public class Card : MonoBehaviour
     }
 
     //뒤집은 카드가 맞지 않으면 다시 뒤집음(Invoke 사용)
-    public void UndoCard(int flag)
+    public void UndoCard(int index)
     {
-        StartCoroutine(InvokeUndoCard(flag));
+        StartCoroutine(InvokeUndoCard(index));
     }
-    IEnumerator InvokeUndoCard(int flag)
+    IEnumerator InvokeUndoCard(int index)
     {
         yield return new WaitForSeconds(0.5f);
 
@@ -101,16 +102,16 @@ public class Card : MonoBehaviour
 
         animator.SetBool("Selected", false);
 
-        CardDisconnect(flag);
+        CardDisconnect(index);
     }
 
     //뒤집은 카드가 맞으면 안 보이게 함(Invoke 사용)
-    public void HideCard(int flag)
+    public void HideCard(int index)
     {
-        CardDisconnect(flag);
-        StartCoroutine(InvokeHideCard(flag));
+        CardDisconnect(index);
+        StartCoroutine(InvokeHideCard());
     }
-    IEnumerator InvokeHideCard(int flag)
+    IEnumerator InvokeHideCard()
     {
         yield return new WaitForSeconds(0.5f);
 
@@ -124,9 +125,9 @@ public class Card : MonoBehaviour
     }
 
     //게임매니저의 해당하는 카드 오브젝트를 null로 바꿈
-    void CardDisconnect(int flag)
+    void CardDisconnect(int index)
     {
-        switch (flag)
+        switch (index)
         {
             case 1:
                 GameManager.instance.firstCard = null;
