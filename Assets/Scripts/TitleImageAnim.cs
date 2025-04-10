@@ -8,6 +8,8 @@ public class TitleImageAnim : MonoBehaviour
 
     public float period;
     float timer = 0f;
+    int save = -1;
+    int temp;
 
     private void Awake()
     {
@@ -21,7 +23,14 @@ public class TitleImageAnim : MonoBehaviour
         if(timer >= period)
         {
             timer = 0f;
-            spriter.sprite = photos[Random.Range(0, photos.Length)];
+
+            temp = Random.Range(0, photos.Length);
+            if (temp == save)
+                save = (temp == 0 ? photos.Length : temp) - 1;
+            else
+                save = temp;
+
+            spriter.sprite = photos[save];
         }
     }
 }
